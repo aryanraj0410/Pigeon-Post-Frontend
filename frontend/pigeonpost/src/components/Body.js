@@ -1,19 +1,38 @@
 import React from 'react'
-import { createAvatarComponent } from 'react-avatar'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Login from './Login';
+import Home from './Home';
+import Feed from './Feed';
+import Profile from './Profile';
 
-const body = () => {
-    const appRouter = createBrowserRouter(
+
+const Body = () => {
+    const appRouter = createBrowserRouter([
         {
-            path:"/home",
-            element:<Home/>
+            path:"/",
+            element: <Home/>,
+            children:[
+                {
+                    path:"/",
+                    element:<Feed/>
+                },
+                {
+                    path:"/profile",
+                    element:<Profile/>
+                }
+            ]    
         },
         {
-            path:"/login",
+            path: "/login",
+            element: <Login/>
         }
+
+    ])
+    return (
+        <div>
+            <RouterProvider router={appRouter} />
+        </div>
     )
-  return (
-    <div>body</div>
-  )
 }
 
-export default body
+export default Body

@@ -5,6 +5,7 @@ import { IoNotifications } from "react-icons/io5";
 import { RiAccountPinBoxFill } from "react-icons/ri";
 import { IoBookmarks } from "react-icons/io5";
 import { FaSignOutAlt } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const LeftSidebar = () => {
   return (
@@ -13,12 +14,12 @@ const LeftSidebar = () => {
             <img className='ml-1' width={"50px"} src = "https://logopond.com/logos/6b309aa83be5cc279fd2a7483ca6f8c4.png" alt="pigeon-logo"/>
         </div>
         <div className='my-4'>
-            <div className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 hover:cursor-pointer rounded-full'>
+            <Link to="/" className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 hover:cursor-pointer rounded-full'>
                 <div>
                 <IoHome size="24px"/>
                 </div>
                 <h1 className='font-bold text-lg ml-2'>Home</h1>
-            </div>
+            </Link>
             <div className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 hover:cursor-pointer rounded-full'>
                 <div>
                 <MdOutlineExplore size="24px"/>
@@ -31,12 +32,12 @@ const LeftSidebar = () => {
                 </div>
                 <h1 className='font-bold text-lg ml-2'>Notification</h1>
             </div>
-            <div className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 hover:cursor-pointer rounded-full'>
+            <Link to="/profile" className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 hover:cursor-pointer rounded-full'>
                 <div>
                 <RiAccountPinBoxFill size="24px"/>
                 </div>
                 <h1 className='font-bold text-lg ml-2'>Profile</h1>
-            </div>
+            </Link>
             <div className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 hover:cursor-pointer rounded-full'>
                 <div>
                 <IoBookmarks size="24px"/>
